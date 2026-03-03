@@ -42,7 +42,7 @@ const KayitPage = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-[#FDD500]/10 rounded-full mb-4">
               <UserPlus className="text-[#FDD500]" size={32} />
             </div>
-            <h1 className="text-4xl font-black uppercase text-white mb-2">Kayıt Ol</h1>
+            <h1 className="minecraft-font text-4xl font-black uppercase text-white mb-2">Kayıt Ol</h1>
             <p className="text-zinc-400 text-sm">Kullanıcı adı oyunda ki ile aynı olmalıdır</p>
           </div>
 

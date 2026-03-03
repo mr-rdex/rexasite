@@ -85,30 +85,30 @@ const ProfilPage = () => {
   const displayName = profileUser.kullanici_adi;
 
   return (
-    <div className="min-h-screen pt-20" data-testid="profile-page">
+    <div className="min-h-screen" data-testid="profile-page">
       {/* Full-width Hero Banner - Taller */}
       <div
-        className="relative w-full"
+        className="relative"
         style={{
           backgroundImage: profileUser.aktif_tema_gorsel
             ? `url(${profileUser.aktif_tema_gorsel})`
             : 'url(/images/hero-bg.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          minHeight: '800px'
+          minHeight: '500px'
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-[#222222]"></div>
-        <div className="relative container mx-auto max-w-7xl px-4 flex items-end pb-8" style={{ minHeight: '800px' }}>
+        <div className="relative container mx-auto max-w-7xl px-4 flex items-end pb-2" style={{ minHeight: '600px' }}>
           <div className="flex items-center space-x-5">
             <img
-              src={profileUser.yetki_gorseli || `https://mc-heads.net/avatar/${displayName}/80`}
+              src={profileUser.yetki_gorseli || `https://mc-heads.net/avatar/${displayName}`}
               alt={displayName}
               className="w-20 h-20 rounded-lg border-2 border-[#FDD500] shadow-lg"
               data-testid="profile-avatar"
             />
             <div>
-              <h1 className="text-3xl font-black uppercase text-white leading-tight" data-testid="profile-username">
+              <h1 className="minecraft-font text-3xl font-black uppercase text-white leading-tight" data-testid="profile-username">
                 {displayName}
               </h1>
               <span className="inline-block mt-1 bg-[#FDD500] text-black text-xs font-bold uppercase px-3 py-1 rounded" data-testid="profile-rank">
@@ -139,21 +139,27 @@ const ProfilPage = () => {
                 </div>
                 <p className="text-2xl font-black text-white">{(profileUser.kredi || 0).toFixed(0)}</p>
               </div>
-              <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-5" data-testid="stat-role">
+              <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-5" data-testid="stat-topics">
                 <div className="flex items-center space-x-3 mb-2">
-                  <Shield className="text-[#FDD500]" size={20} />
-                  <span className="text-zinc-500 text-sm uppercase tracking-wider">Rol</span>
+                  <span className="text-zinc-500 text-sm uppercase tracking-wider">Açılan Konu</span>
                 </div>
-                <p className="text-2xl font-black text-white uppercase">{profileUser.rol}</p>
+                <p className="text-2xl font-black text-white">{profileUser.acilan_konu_sayisi || 0}</p>
               </div>
-              <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-5" data-testid="stat-days">
+              <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-5" data-testid="stat-messages">
                 <div className="flex items-center space-x-3 mb-2">
-                  <Calendar className="text-[#FDD500]" size={20} />
-                  <span className="text-zinc-500 text-sm uppercase tracking-wider">Gün</span>
+                  <span className="text-zinc-500 text-sm uppercase tracking-wider">Gönderilen Mesaj</span>
                 </div>
-                <p className="text-2xl font-black text-white">
-                  {Math.floor((Date.now() - new Date(profileUser.kayit_tarihi)) / (1000 * 60 * 60 * 24))}
-                </p>
+                <p className="text-2xl font-black text-white">{profileUser.gonderilen_mesaj_sayisi || 0}</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-5" data-testid="stat-spending">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-zinc-500 text-sm uppercase tracking-wider">Toplam Harcama</span>
+                  <Coins className="text-[#FDD500]" size={20} />
+                </div>
+                <p className="text-3xl font-black text-[#FDD500]">{profileUser.toplam_harcama ? profileUser.toplam_harcama.toFixed(2) : "0.00"} ₺</p>
               </div>
             </div>
 
@@ -163,6 +169,23 @@ const ProfilPage = () => {
               <p className="text-zinc-300 text-sm">{formatDate(profileUser.kayit_tarihi)}</p>
             </div>
           </div>
+
+          
+
+          {/* Right Column - Full Body Skin */}
+          <div className="lg:col-span-3">
+            <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-6 flex flex-col items-center" data-testid="skin-section">
+              <h3 className="text-zinc-500 text-sm uppercase tracking-wider mb-4">Oyuncu Görünümü</h3>
+              <img
+                src={`https://mc-heads.net/body/${displayName}`}
+                alt={`${displayName} skin`}
+                className="max-w-[140px] w-full h-auto"
+                data-testid="profile-skin"
+              />
+              <p className="text-zinc-400 text-xs mt-4 text-center">{displayName}</p>
+            </div>
+          </div>
+
 
           {/* Middle Column - Themes */}
           <div className="lg:col-span-4">
@@ -215,20 +238,6 @@ const ProfilPage = () => {
                   })}
                 </div>
               )}
-            </div>
-          </div>
-
-          {/* Right Column - Full Body Skin */}
-          <div className="lg:col-span-3">
-            <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-6 flex flex-col items-center" data-testid="skin-section">
-              <h3 className="text-zinc-500 text-sm uppercase tracking-wider mb-4">Oyuncu Görünümü</h3>
-              <img
-                src={`https://mc-heads.net/body/${displayName}`}
-                alt={`${displayName} skin`}
-                className="max-w-[140px] w-full h-auto"
-                data-testid="profile-skin"
-              />
-              <p className="text-zinc-400 text-xs mt-4 text-center">{displayName}</p>
             </div>
           </div>
         </div>

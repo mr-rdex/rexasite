@@ -4,17 +4,24 @@ import { Shield, Wrench, Users, Zap, Database, Lock, MessageCircle, ShoppingBag 
 const HakkimizdaPage = () => {
   const yetkililer = [
     {
-      isim: 'AdminKral',
+      isim: 'rdex',
       yetki: 'Yönetici',
       gorev: 'Sunucu Sahibi & Genel Yönetim',
-      avatar: 'AdminKral',
+      avatar: 'byrdex_',
       renk: 'from-red-500 to-orange-500'
     },
     {
-      isim: 'ModMaster',
+      isim: 'Nesh',
       yetki: 'Yönetici',
       gorev: 'Teknik Yönetim & Geliştirme',
-      avatar: 'ModMaster',
+      avatar: 'NeshxD_',
+      renk: 'from-red-500 to-orange-500'
+    },
+    {
+      isim: 'SupportHero',
+      yetki: 'Moderatör',
+      gorev: 'Forum & Destek Yönetimi',
+      avatar: 'SupportHero',
       renk: 'from-purple-500 to-pink-500'
     },
     {
@@ -23,13 +30,6 @@ const HakkimizdaPage = () => {
       gorev: 'Moderasyon & Oyuncu Desteği',
       avatar: 'HelperPro',
       renk: 'from-blue-500 to-cyan-500'
-    },
-    {
-      isim: 'SupportHero',
-      yetki: 'Moderatör',
-      gorev: 'Forum & Destek Yönetimi',
-      avatar: 'SupportHero',
-      renk: 'from-green-500 to-emerald-500'
     }
   ];
 
@@ -89,7 +89,7 @@ const HakkimizdaPage = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase text-white mb-6">
+          <h1 className="minecraft-font text-5xl md:text-7xl font-black tracking-tighter uppercase text-white mb-6">
             Hakkımızda
           </h1>
           <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto">
@@ -101,14 +101,14 @@ const HakkimizdaPage = () => {
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <div className="bg-[#1E1E1E] border border-zinc-800 rounded-xl p-8 hover:border-[#FDD500]/50 hover:shadow-[0_0_30px_rgba(255,213,0,0.2)] transition-all duration-300">
-            <h2 className="text-3xl font-bold uppercase text-[#FDD500] mb-4">Misyonumuz</h2>
+            <h2 className="minecraft-font text-3xl font-bold uppercase text-[#FDD500] mb-4">Misyonumuz</h2>
             <p className="text-zinc-300 leading-relaxed">
               Türk Minecraft topluluğuna en iyi oyun deneyimini sunmak, adil ve eğlenceli bir ortam oluşturmak.
               Her oyuncunun kendini özel hissettiği, güvenli ve aktif bir topluluk yaratmak temel hedefimizdir.
             </p>
           </div>
           <div className="bg-[#1E1E1E] border border-zinc-800 rounded-xl p-8 hover:border-[#FDD500]/50 hover:shadow-[0_0_30px_rgba(255,213,0,0.2)] transition-all duration-300">
-            <h2 className="text-3xl font-bold uppercase text-[#FDD500] mb-4">Vizyonumuz</h2>
+            <h2 className="minecraft-font text-3xl font-bold uppercase text-[#FDD500] mb-4">Vizyonumuz</h2>
             <p className="text-zinc-300 leading-relaxed">
               Türkiye'nin en büyük ve en kaliteli Minecraft sunucusu olmak. Sürekli yenilikler ve güncellemeler ile
               oyuncularımıza her zaman en iyi içeriği sunmak ve lider konumumuzu korumak.
@@ -118,7 +118,7 @@ const HakkimizdaPage = () => {
 
         {/* Yetkili Kadro */}
         <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-black uppercase text-white mb-12 text-center">
+          <h2 className="minecraft-font text-4xl md:text-5xl font-black uppercase text-white mb-12 text-center">
             Yetkili Kadromuz
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -130,11 +130,11 @@ const HakkimizdaPage = () => {
               >
                 <div className="relative inline-block mb-4">
                   <img
-                    src={`https://cravatar.eu/helmavatar/${yetkili.avatar}/128`}
+                    src={`https://mc-heads.net/avatar/${yetkili.avatar}`}
                     alt={yetkili.isim}
                     className="w-24 h-24 rounded-xl mx-auto group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${yetkili.renk} px-4 py-1 rounded-full`}>
+                  <div className={`absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${yetkili.renk} px-4 py-1 rounded-full`}>
                     <span className="text-white font-bold text-xs uppercase">{yetkili.yetki}</span>
                   </div>
                 </div>
@@ -147,7 +147,7 @@ const HakkimizdaPage = () => {
 
         {/* Sunucu Sistemleri */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-black uppercase text-white mb-12 text-center">
+          <h2 className="minecraft-font text-4xl md:text-5xl font-black uppercase text-white mb-12 text-center">
             Sunucu Sistemlerimiz
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -38,7 +38,7 @@ const ForumPage = () => {
     <div className="min-h-screen pt-24 pb-16 px-4" data-testid="forum-page">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-12">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase text-white mb-4">
+          <h1 className="minecraft-font text-5xl md:text-7xl font-black tracking-tighter uppercase text-white mb-4">
             Forum
           </h1>
           <p className="text-lg text-zinc-400">
@@ -84,6 +84,10 @@ const ForumPage = () => {
                     </h3>
                     <p className="text-sm text-zinc-400">{category.aciklama}</p>
                   </div>
+                </div>
+                <div className="flex flex-col items-end justify-center h-full">
+                  <span className="text-[#FDD500] font-bold text-xl">{category.konu_sayisi || 0}</span>
+                  <span className="text-zinc-500 text-xs uppercase tracking-wider">Konu</span>
                 </div>
               </div>
             </Link>

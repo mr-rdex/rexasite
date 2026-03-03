@@ -130,7 +130,7 @@ const AdminPage = () => {
     <div className="min-h-screen pt-24 pb-16 px-4" data-testid="admin-page">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-12">
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase text-white mb-4">Admin Panel</h1>
+          <h1 className="minecraft-font text-5xl md:text-7xl font-black tracking-tighter uppercase text-white mb-4">Admin Panel</h1>
           <p className="text-lg text-zinc-400">Sistemi yönet ve içerikleri düzenle</p>
         </div>
 
@@ -164,7 +164,7 @@ const AdminPage = () => {
                     <tbody>
                       {users.map((u) => (
                         <tr key={u.id} className="border-b border-zinc-800 hover:bg-[#2A2A2A] transition-colors">
-                          <td className="p-4"><div className="flex items-center space-x-3"><img src={`https://cravatar.eu/helmavatar/${u.kullanici_adi}/32`} alt={u.kullanici_adi} className="w-8 h-8 rounded" /><span className="text-white font-medium">{u.kullanici_adi}</span></div></td>
+                          <td className="p-4"><div className="flex items-center space-x-3"><img src={`https://mc-heads.net/avatar/${u.kullanici_adi}`} alt={u.kullanici_adi} className="w-8 h-8 rounded" /><span className="text-white font-medium">{u.kullanici_adi}</span></div></td>
                           <td className="p-4 text-zinc-400">{u.email}</td>
                           <td className="p-4"><span className="text-[#FDD500] font-bold">{u.kredi.toFixed(0)} Kredi</span></td>
                           <td className="p-4"><span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-zinc-800 text-zinc-300">{u.yetki || 'Oyuncu'}</span></td>
@@ -260,7 +260,7 @@ const AdminPage = () => {
             {/* ===== REPORTS TAB ===== */}
             {activeTab === 'reports' && (
               <div data-testid="reports-section">
-                <h2 className="text-2xl font-bold text-white mb-6">Kullanıcı Raporları</h2>
+                <h2 className="minecraft-font text-2xl font-bold text-white mb-6">Kullanıcı Raporları</h2>
                 {reports.length === 0 ? (
                   <div className="bg-[#1E1E1E] border border-zinc-800 rounded-lg p-8 text-center"><AlertCircle className="mx-auto text-zinc-600 mb-4" size={48} /><p className="text-zinc-400">Henüz rapor yok</p></div>
                 ) : (
@@ -376,9 +376,9 @@ const AdminPage = () => {
               <button onClick={() => setEditTheme(null)} className="text-zinc-400 hover:text-white"><X size={24} /></button>
             </div>
             <form onSubmit={handleUpdateTheme} className="space-y-4">
-              <div><label className="block text-sm font-medium text-zinc-400 mb-2">Tema Adı</label><input type="text" required className={inputCls} value={editTheme.isim} onChange={(e) => setTheme({...editTheme, isim: e.target.value})} /></div>
-              <div><label className="block text-sm font-medium text-zinc-400 mb-2">Görsel URL</label><input type="url" required className={inputCls} value={editTheme.gorsel_url} onChange={(e) => setTheme({...editTheme, gorsel_url: e.target.value})} /></div>
-              <div><label className="block text-sm font-medium text-zinc-400 mb-2">Fiyat (Kredi)</label><input type="number" min="0" className={inputCls} value={editTheme.fiyat} onChange={(e) => setTheme({...editTheme, fiyat: parseFloat(e.target.value) || 0})} /></div>
+              <div><label className="block text-sm font-medium text-zinc-400 mb-2">Tema Adı</label><input type="text" required className={inputCls} value={editTheme.isim} onChange={(e) => setEditTheme({...editTheme, isim: e.target.value})} /></div>
+              <div><label className="block text-sm font-medium text-zinc-400 mb-2">Görsel URL</label><input type="url" required className={inputCls} value={editTheme.gorsel_url} onChange={(e) => setEditTheme({...editTheme, gorsel_url: e.target.value})} /></div>
+              <div><label className="block text-sm font-medium text-zinc-400 mb-2">Fiyat (Kredi)</label><input type="number" min="0" className={inputCls} value={editTheme.fiyat} onChange={(e) => setEditTheme({...editTheme, fiyat: parseFloat(e.target.value) || 0})} /></div>
               <div className="flex space-x-4">
                 <button type="submit" className="bg-[#FDD500] text-black font-bold uppercase tracking-wide px-6 py-3 rounded-lg hover:bg-[#E6C200] transition-all btn-3d">Kaydet</button>
                 <button type="button" onClick={() => setEditTheme(null)} className="bg-transparent border-2 border-zinc-700 text-zinc-400 font-bold uppercase px-6 py-3 rounded-lg hover:border-zinc-600 transition-all">İptal</button>

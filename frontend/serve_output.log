@@ -1,0 +1,39 @@
+ INFO  Accepting connections at http://localhost:3000
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 36 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /static/css/main.529ed7dd.css
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 6 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /static/js/main.1678ff72.js
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 9 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /images/logo.png
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /images/footer-logo.png
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 6 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 10 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /undefined/api/leaderboard/kredi
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /undefined/api/leaderboard/son-kayitlar
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /undefined/api/leaderboard/son-alisverisler
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /undefined/api/leaderboard/son-kredi-yuklemeler
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /undefined/api/haberler?limit=3
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 4 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 4 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 3 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 4 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /undefined/api/stats
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 4 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 7 ms
+ HTTP  3/1/2026 1:23:38 AM ::1 GET /images/manzara.jpg
+ HTTP  3/1/2026 1:23:38 AM ::1 Returned 200 in 9 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /market
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 200 in 3 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /static/js/main.1678ff72.js
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /static/css/main.529ed7dd.css
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 304 in 3 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 304 in 3 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /images/logo.png
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 304 in 1 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /images/footer-logo.png
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 304 in 1 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /undefined/api/market/kategoriler
+ HTTP  3/1/2026 1:23:41 AM ::1 GET /undefined/api/market/T%C3%BCm%C3%BC/urunler
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 200 in 3 ms
+ HTTP  3/1/2026 1:23:41 AM ::1 Returned 200 in 2 ms
